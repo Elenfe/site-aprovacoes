@@ -1,48 +1,52 @@
 <template>
   <div class="home">
-    <b-container fluid>
-        <b-row class="mb-4 mt-4 text-center">
-        <b-col cols="4">FILTRO</b-col>
-        <b-col cols="4"></b-col>
-        <b-btn cols="4" @click="show=true" variant="primary">Cadastrar concurso</b-btn>
-      </b-row>
+    <b-container class="bg-info" fluid>
+        <b-row class="mb-4 p-4 text-center">
+          <b-col cols="4">FILTRO</b-col>
+          <b-col cols="4"></b-col>
+          <b-btn cols="4" @click="show=true" variant="primary">Cadastrar concurso</b-btn>
+        </b-row>
     </b-container>
     <b-container>
         <b-row>
-        <b-col cols="4" sm="2">
+        <b-col cols="3" sm="2">
           <b-form>
-            <!-- <b-col cols="4"> -->
           <b-form-select
             :value="null"
             :options="anos"
             required
             v-model="form.anos">
           </b-form-select>
-          <!-- </b-col> -->
           </b-form>
         </b-col>
-        <b-col cols="4" sm="6">
+        <b-col cols="3" sm="2">
           <b-form>
-            <!-- <b-col cols="4"> -->
+          <b-form-select
+            :value="null"
+            :options="estado"
+            required
+            v-model="form.estado">
+          </b-form-select>
+          </b-form>
+        </b-col>
+        <b-col cols="3" sm="5">
+          <b-form>
           <b-form-select
                           :value="null"
                           :options="concurso"
                           required
                           v-model="form.concurso">
           </b-form-select>
-          <!-- </b-col> -->
           </b-form>
         </b-col>
-        <b-col cols="4">
+        <b-col cols="3" sm="2">
           <b-form inline>
-            <!-- <b-col cols="4"> -->
           <b-form-select
                           :value="null"
                           :options="sigla"
                           required
                           v-model="form.sigla">
           </b-form-select>
-          <!-- </b-col> -->
           </b-form>
           </b-col>
       </b-row>
@@ -85,31 +89,24 @@
                           v-model="form.hospital" /></b-col>
          </b-row>
          <b-row class="mb-3">
-           <b-col cols="12" ><b-form-textarea id="textarea3"
-                   v-model="text1"
-                   placeholder="Digite o Texto"
-                   :rows="3"></b-form-textarea></b-col>
+           <b-col cols="12" ><b-form-input placeholder="Digite o Texto"></b-form-input></b-col>
           </b-row>
         <b-row class="mb-2">
-            <b-col sm="2" cols="4">
-              <b-form-select
-                        :options="posicao"
-                        required />
+          <b-col cols="3" sm="2">
+            <b-form-input placeholder="Posição"></b-form-input>
+          </b-col>
+            <b-col cols="3" sm="7">
+              <!-- <b-form-group horizontal> -->
+                <b-form-input placeholder="Digite o nome"></b-form-input>
+              <!-- </b-form-group> -->
             </b-col>
-            <b-col sm="6">
-              <b-form-group horizontal
-                :label-cols="1"
-                label-for="input_default">
-                <b-form-input id="input_default"></b-form-input>
-              </b-form-group>
-            </b-col>
-            <b-col>
+            <b-col sm="2">
               <b-form-group>
                   <b-form-checkbox-group plain stacked v-model="selected" :options="options" />
               </b-form-group>
             </b-col>
             <b-col>
-              <b-btn size="sm" class="float-left" variant="primary">
+              <b-btn size="sm" variant="primary">
                 +
               </b-btn>
             </b-col>
@@ -155,6 +152,10 @@ export default class Home extends Vue {
       anos: [
         { text: 'Selecione o Ano', value: null },
         '2018', '2017', '2016', '2015'
+      ],
+      estado: [
+        { text: 'Selecione o estado', value: null },
+        'RJ', 'SP', 'MG', 'ES', 'BA'
       ],
        concurso: [
         { text: 'Selecione o concurso', value: null },
