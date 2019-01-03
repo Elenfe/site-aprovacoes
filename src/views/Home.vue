@@ -177,67 +177,67 @@
 
 </template>
 
-<script lang="ts">
-import { Component, Vue } from 'vue-property-decorator';
-import HelloWorld from '@/components/HelloWorld.vue'; // @ is an alias to /src
+// <script lang="ts">
+// import { Component, Vue } from 'vue-property-decorator';
+// import HelloWorld from '@/components/HelloWorld.vue'; // @ is an alias to /src
 
-@Component({
-  components: {
-    HelloWorld,
-  },
-})
+// @Component({
+//   components: {
+//     HelloWorld,
+//   },
+// })
 export default class Home extends Vue {
   data () {
+  //   return {
+  //     form: {
+  //       anos: null,
+  //     }
+  //   }
     return {
       form: {
         anos: null,
-      }
-    }
-    // return {
-    //   form: {
-    //     anos: null,
-    //     estados: null,
-    //     concurso: null,
-    //     sigla: null,
-    //     especialidade: null,
-    //     hospital: null,
-    //     texto: null,
-    //     nomeAluno: null
-    //   },
-    //   anos: [
-    //     { text: 'Selecione o Ano', value: null },
-    //     '2018', '2017', '2016', '2015'
-    //   ],
-    //   estados: [
-    //     { text: 'Selecione o estado', value: null },
-    //     'RJ', 'SP', 'MG', 'ES', 'BA'
-    //   ],
-    //    concurso: [
-    //     { text: 'Selecione o concurso', value: null },
-    //     'Hospital do carmo', 'Hospital de olhos', 'Hospital Salgado Filho', 'Hospital lourenço Jorge'
-    //   ],
-    //    sigla: [
-    //     { text: 'Sigla', value: null },
-    //     'HC-RJ', 'HO-RJ', 'HSF-RJ', 'HLJ-RJ'
-    //   ],
-    //    especialidade: [
-    //     { text: 'Especialidade', value: null },
-    //     'Cirurgia', 'ginecologia', 'Clinica Medica', 'Ortopedia'
-    //   ],
-    //    hospital: [
-    //     { text: 'Hospital', value: null },
-    //     'Hospital Municipal Salgado Filho', 'Hospital Municipal lourenço Jorge', 'Hospital Estadua do Carmo', 'Hospital Municipal Suza Aguiar'
-    //   ],
-    //    text: '',
-    //    text1: '',
-    //   show: false,
-    //   selected: [],
-    //   options: [
-    //     {text: 'MEDGRUPO', value: 'medgrupo'},
-    //     {text: 'SUPLENTE', value: 'suplente'},
-    //   ]
+        estados: null,
+        concurso: null,
+        sigla: null,
+        especialidade: null,
+        hospital: null,
+        texto: null,
+        nomeAluno: null
+      },
+      anos: [
+        { text: 'Selecione o Ano', value: null },
+        '2018', '2017', '2016', '2015'
+      ],
+      estados: [
+        { text: 'Selecione o estado', value: null },
+        'RJ', 'SP', 'MG', 'ES', 'BA'
+      ],
+       concurso: [
+        { text: 'Selecione o concurso', value: null },
+        'Hospital do carmo', 'Hospital de olhos', 'Hospital Salgado Filho', 'Hospital lourenço Jorge'
+      ],
+       sigla: [
+        { text: 'Sigla', value: null },
+        'HC-RJ', 'HO-RJ', 'HSF-RJ', 'HLJ-RJ'
+      ],
+       especialidade: [
+        { text: 'Especialidade', value: null },
+        'Cirurgia', 'ginecologia', 'Clinica Medica', 'Ortopedia'
+      ],
+       hospital: [
+        { text: 'Hospital', value: null },
+        'Hospital Municipal Salgado Filho', 'Hospital Municipal lourenço Jorge', 'Hospital Estadua do Carmo', 'Hospital Municipal Suza Aguiar'
+      ],
+       text: '',
+       text1: '',
+      show: false,
+      selected: [],
+      options: [
+        {text: 'MEDGRUPO', value: 'medgrupo'},
+        {text: 'SUPLENTE', value: 'suplente'},
+      ]
 
-    // }
+    }
   }
 }
 </script>
