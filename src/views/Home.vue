@@ -78,81 +78,71 @@
     <b-modal v-model="show" size="lg">
        <b-container>
 
-         <b-row class="mb-3">
-            <b-col cols="6" sm="3">
-              <b-form>
-              <select v-model="anoselected" @change="onChange">
-                <option disabled value="">Escolha o Ano</option>
-                <option v-for="ano in anos.data" :key="ano._id" :value="ano">{{ano.year}}</option>
-              </select>
-            </b-form>
-            </b-col>
-            <b-col cols="6" sm="3">
-              <b-form>
-                <select v-model="estadoselected" @change="onChangeestado">
-                <option disabled value="">Escolha o Estado</option>
-                <option v-for="estado in estados.states" :key="estado._id" :value="estado">{{estado.name.toUpperCase()}} - {{estado.shortname.toUpperCase()}}</option>
-              </select>
-               </b-form>
-            </b-col>
-         </b-row>
-
-         <b-row class="mb-3">
-            <b-col cols="4">
-              <b-form>
-              <select v-model="anoselected" @change="onChange"  style="width: 400px;">
-                <option disabled value="">Escolha a especialidade</option>
-                <option v-for="ano in anos.data" :key="ano._id" :value="ano">{{ano.year}}</option>
-              </select>
-            </b-form>
-            </b-col>
-            <b-col cols="3">
-              <b-form>
-                <select v-model="instituteselected" @change="onChangeinstitute">
-                  <option disabled value="">Escolha o Instituto</option>
-                  <option v-for="institute in estadoselected.institutes" :key="institute._id" :value="estado">{{institute.name.toUpperCase()}}- {{institute.shortname.toUpperCase()}}</option>
-                </select>
-              </b-form>
-            </b-col>
-         </b-row>
-
-         <b-row class="mb-3">
-           <b-col cols="12" ><b-form-input placeholder="Digite o Texto"></b-form-input></b-col>
-          </b-row>
-        <b-row class="mb-2">
+         <b-row class="mb-2">
           <b-col cols="3" sm="2">
-            <b-form-input placeholder="Posição"></b-form-input>
+            <label class="col-form-label-sm">Ano</label>
+            <b-form-input></b-form-input>
           </b-col>
             <b-col cols="3" sm="7">
-              <!-- <b-form-group horizontal> -->
-                <b-form-input placeholder="Digite o nome"></b-form-input>
-              <!-- </b-form-group> -->
+              <label class="col-form-label-sm">Estado</label>
+                <b-form-input></b-form-input>
             </b-col>
             <b-col sm="2">
-              <!-- <b-form-group>
+            </b-col>
+        </b-row>
+
+         <b-row class="mb-2">
+          <b-col cols="3" sm="2">
+            <label class="col-form-label-sm">Especialidade</label>
+            <b-form-input></b-form-input>
+          </b-col>
+            <b-col cols="3" sm="7">
+              <label class="col-form-label-sm">Instituto</label>
+                <b-form-input></b-form-input>
+            </b-col>
+            <b-col sm="2">
+            </b-col>
+        </b-row>
+         <b-row class="mb-3">
+           <label class="col-form-label-sm">Texto Extra</label>
+           <b-col cols="12" ><b-form-input></b-form-input></b-col>
+          </b-row>
+        <b-row class="mb-2">
+          <b-col cols="3" sm="1">
+            <label class="col-form-label-sm">Posição</label>
+            <b-form-input></b-form-input>
+          </b-col>
+            <b-col cols="3" sm="8">
+              <label class="col-form-label-sm">Nome do Aluno</label>
+                <b-form-input></b-form-input>
+            </b-col>
+            <b-col sm="2" class="medSuplente">
+              <b-form-group>
                   <b-form-checkbox-group plain stacked v-model="selected" :options="options" />
-              </b-form-group> -->
+              </b-form-group>
             </b-col>
             <b-col>
-              <b-btn size="sm" variant="primary">
+              <b-btn class="btnPlus" size="sm" variant="primary">
                 +
               </b-btn>
             </b-col>
         </b-row>
         <b-row class="mb-2">
-          <b-col cols="3" sm="2">
-            <b-form-input placeholder="Posição"></b-form-input>
+          <b-col cols="3" sm="1">
+            <label class="col-form-label-sm">Posição</label>
+            <b-form-input></b-form-input>
           </b-col>
-            <b-col cols="3" sm="7">
-                <b-form-input placeholder="Digite o nome"></b-form-input>
+            <b-col cols="3" sm="8">
+              <label class="col-form-label-sm">Nome do Aluno</label>
+                <b-form-input></b-form-input>
             </b-col>
-            <b-col sm="2">
-              <!-- <b-form-group>
+            <b-col sm="2" class="medSuplente">
+              <b-form-group>
                   <b-form-checkbox-group plain stacked v-model="selected" :options="options" />
-              </b-form-group> -->
+              </b-form-group>
             </b-col>
             <b-col>
-              <b-btn size="sm" variant="primary">
+              <b-btn class="btnPlus" size="sm" variant="primary">
                 +
               </b-btn>
             </b-col>
@@ -211,6 +201,7 @@ export default class Home extends Vue {
   }
 
   onChangeestado(){
+
   }
 
   async onChangeinstitute(){
@@ -219,7 +210,7 @@ export default class Home extends Vue {
     console.log(this.instituteselected._id);
   }
 
-  async listar() {
+  async listar(){
     this.anos = await Aprovacoes.getanos();
     // this.estados = await Aprovacoes.getanos();
     // debugger

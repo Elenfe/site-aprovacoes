@@ -7,7 +7,7 @@
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
+  // text-align: center;
   color: #2c3e50;
 }
 #nav {
@@ -19,5 +19,13 @@
       color: #42b983;
     }
   }
+}
+
+.btnPlus {
+  margin-top: 100%;
+}
+
+.medSuplente{
+  margin-top: 4%;
 }
 </style>
