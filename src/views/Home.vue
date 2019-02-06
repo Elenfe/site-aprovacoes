@@ -200,20 +200,13 @@ export default class Home extends Vue {
     this.estados = content.data;
   }
 
-  onChangeestado(){
-
-  }
-
   async onChangeinstitute(){
     const institute = this.instituteselected._id;
-    // const institute = await Aprovacoes.getinstitute(this.anoselected._id);
     console.log(this.instituteselected._id);
   }
 
   async listar(){
     this.anos = await Aprovacoes.getanos();
-    // this.estados = await Aprovacoes.getanos();
-    // debugger
   }
 }
 </script>

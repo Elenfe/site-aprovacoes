@@ -11,14 +11,4 @@ export default {
     const result = await axios (`http://localhost:5001/api/v1/approvals/${id}`)
     return result.data
   },
-
-  async getinstitute(id: string) {
-    const result = await axios (`http://localhost:5001/api/v1/institutes/${id}`)
-    return result.data
-  },
-
-  // async getestado(id: string) {
-  //   const result = await axios (`http://localhost:5001/api/v1/approvals/${id}`)
-  //   return result.data
-  // },
 }
