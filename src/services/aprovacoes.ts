@@ -11,4 +11,10 @@ export default {
     const result = await axios (`http://localhost:5001/api/v1/approvals/${id}`)
     return result.data
   },
+
+  async Postanos() {
+    const result = await axios('http://localhost:5001/api/v1/approvals/')
+    return result.data
+  },
+
 }

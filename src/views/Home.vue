@@ -19,7 +19,7 @@
           </b-col>
           <b-col cols="4" sm="3">
             <b-form>
-              <select v-model="estadoselected" @change="onChangeestado">
+              <select v-model="estadoselected">
                 <option disabled value="">Escolha o Estado</option>
                 <option v-for="estado in estados.states" :key="estado._id" :value="estado">{{estado.name.toUpperCase()}} - {{estado.shortname.toUpperCase()}}</option>
               </select>
@@ -75,9 +75,8 @@
 <!-- Cadastro de aprovações -->
 <template>
   <div>
-    <b-modal v-model="show" size="lg">
+    <b-modal title="Cadastro de Aprovações" centered v-model="show" size="lg">
        <b-container>
-
          <b-row class="mb-2">
           <b-col cols="3" sm="2">
             <label class="col-form-label-sm">Ano</label>
@@ -118,7 +117,7 @@
             </b-col>
             <b-col sm="2" class="medSuplente">
               <b-form-group>
-                  <b-form-checkbox-group plain stacked v-model="selected" :options="options" />
+                  <b-form-checkbox-group plain stacked :options="options" />
               </b-form-group>
             </b-col>
             <b-col>
@@ -138,7 +137,7 @@
             </b-col>
             <b-col sm="2" class="medSuplente">
               <b-form-group>
-                  <b-form-checkbox-group plain stacked v-model="selected" :options="options" />
+                  <b-form-checkbox-group plain stacked :options="options" />
               </b-form-group>
             </b-col>
             <b-col>
@@ -149,7 +148,7 @@
         </b-row>
        </b-container>
        <div slot="modal-footer" class="w-100">
-         <b-btn size="sm" class="float-right" variant="primary" @click="show=false">
+         <b-btn size="sm" @click="salvar()" class="float-right" variant="primary">
            Salvar
          </b-btn>
          <b-btn size="sm" class="float-left" variant="primary" @click="show=false">
@@ -179,6 +178,7 @@ export default class Home extends Vue {
 
   anos = [];
   estados = [];
+  estado = "";
 
   anoselected = { year: '', _id: '' };
   estadoselected = { name: '', _id: '', institutes: [] };
@@ -208,6 +208,11 @@ export default class Home extends Vue {
   async listar(){
     this.anos = await Aprovacoes.getanos();
   }
+
+  salvar(){
+    console.log("salvar")
+  }
+
 }
 </script>
 
