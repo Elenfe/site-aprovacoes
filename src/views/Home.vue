@@ -132,7 +132,7 @@
             <b-form-input></b-form-input>
           </b-col>
             <b-col cols="3" sm="8">
-              <label class="col-form-label-sm">Nome do Aluno</label>
+              <label class="col-form-label-sm">Nome do Aluno(a)</label>
                 <b-form-input></b-form-input>
             </b-col>
             <b-col sm="2" class="medSuplente">
